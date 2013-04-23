@@ -1,0 +1,38 @@
+
+public class diceNumberGenerator {
+  
+  private int lowValue;
+  private int highValue;
+  
+  public diceNumberGenerator()
+  {
+  	lowValue = 1;
+  	highValue = 6;
+  }
+  public diceNumberGenerator( int numberOfDices )
+  {
+  	lowValue = 1;
+  	highValue = 12;
+  }
+  /*public diceNumberGenerator( int multiple )
+  {
+  	multiple = 2;
+  	lowValue = smallNumber;
+  	highValue = bigNumber;
+  }
+  */
+  
+  public int throwDice()
+  {
+  	int diceNumber;
+  	diceNumber = lowValue + (int)(Math.random()*highValue);
+  	return diceNumber;
+  }
+  
+  public int throwDices( )
+  {
+  	int diceNumber;
+  	diceNumber = lowValue + (int)(Math.random()*highValue);
+  	return diceNumber;
+  }
+}
