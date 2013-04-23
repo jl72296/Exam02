@@ -1,0 +1,58 @@
+import java.util.Scanner;
+
+public class diceNumber {
+  public static void main ( String args [] )
+  {
+  	Scanner input = new Scanner( System.in );
+  	diceNumberGenerator getDiceNumber = new diceNumberGenerator();
+  	diceNumberGenerator getDiceNumber2 = new diceNumberGenerator( 2 );
+  	
+
+  	System.out.println( "Do you want to play with 1 or 2 dices?: ");
+  	int numberOfDices = input.nextInt();
+  	
+  	if ( numberOfDices == 1 )
+  	{
+  	
+  		System.out.println( "A dice is thrown. \nIs the outcome a 'big' (b) or 'small' (s) value?: ");
+  		String userAnswer = input.next();
+  		
+  		if ( userAnswer.equalsIgnoreCase( "S" ) )
+  		{
+  			if ( getDiceNumber.throwDice() <= 3 )
+  				System.out.printf( "You are Correct!" );
+  			else
+  				System.out.printf( "You are Wrong!" );
+  		}
+  		else if ( userAnswer.equalsIgnoreCase( "B" ) )
+  		{
+  			if ( 	(getDiceNumber.throwDice() >= 3 && getDiceNumber.throwDice() <= 6) )
+  				System.out.printf( "You are Correct!" );
+  			else
+  				System.out.printf( "You are Wrong!" );
+  		}
+  	}
+  	if ( numberOfDices == 2)
+  	{
+  			System.out.println( "Two dices are thrown. \nIs the outcome a 'big' (b) or 'small' (s) value?: ");
+  			String userAnswer = input.next();
+  		
+  		if ( userAnswer.equalsIgnoreCase( "S" ) )
+  		{
+  			if ( getDiceNumber2.throwDices() <= 6 )
+  				System.out.printf( "You are Correct!" );
+  			else
+  				System.out.printf( "You are Wrong!" );
+  		}
+  		else if ( userAnswer.equalsIgnoreCase( "B" ) )
+  		{
+  			if ( (getDiceNumber2.throwDices() >= 6 && getDiceNumber2.throwDices() <= 12) )
+  				System.out.printf( "You are Correct!" );
+  			else
+  				System.out.printf( "You are Wrong!" );
+  		}
+  	}
+
+
+  }
+}
